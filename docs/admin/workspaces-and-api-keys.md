@@ -28,3 +28,7 @@ Manage/rotate a target's key: `GET /api/targets/{id}/workspace-key`, `POST .../w
 ![Settings: masked workspace API key](/img/screenshots/settings-workspace.png)
 
 This key is separate from your session cookie and from the GitHub App's installation token — three distinct trust boundaries, each scoped to what it needs.
+
+## Personal access tokens (public API)
+
+Distinct again from the workspace API key above: a personal access token (created in the same **API Tokens** card, just below the workspace key) authenticates you specifically against the [Public API](../reference/api.md) — read-only by default, optionally read/write to also trigger scans. See the Public API Reference for the full endpoint list and scope model.
