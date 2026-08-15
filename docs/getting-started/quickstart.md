@@ -36,15 +36,38 @@ Sign in with the seeded admin account: `ADMIN_EMAIL`/`ADMIN_PASSWORD` from `.env
 
 To stop: `docker compose down` (add `-v` to also drop the Postgres volume).
 
-## Option B: Manual setup (macOS, Homebrew)
+## Option B: Manual setup (macOS/Linux/Windows)
 
 Prefer running backend/frontend directly for hot reload or debugging.
+
+**macOS (Homebrew)**
 
 ```bash
 brew install postgresql@16 redis semgrep trivy gitleaks gosec python@3.12
 brew services start postgresql@16
 brew services start redis
 ```
+
+**Linux (Debian/Ubuntu, apt)**
+
+```bash
+sudo apt-get update
+sudo apt-get install -y postgresql-16 redis-server python3.12 python3.12-venv
+sudo systemctl start postgresql redis-server
+# Semgrep/gosec aren't in apt; install via their own installers:
+python3.12 -m pip install --user semgrep
+go install github.com/securego/gosec/v2/cmd/gosec@latest   # requires Go
+# Trivy and Gitleaks ship their own install scripts -- see each project's
+# release page for the current version:
+curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin
+curl -sfL https://raw.githubusercontent.com/gitleaks/gitleaks/master/scripts/install.sh | sh -s -- -b /usr/local/bin
+```
+
+Other distros: same five tools, swap `apt-get` for your package manager (e.g. Fedora/RHEL: `dnf install postgresql16-server redis python3.12`).
+
+**Windows**
+
+The scanner CLIs are Linux/macOS-first tools with inconsistent native Windows support. **Use WSL2**: install a WSL2 Ubuntu distro, clone the repo inside the WSL filesystem (not a Windows path — I/O performance suffers badly across the boundary), and follow the Linux steps above. Prefer Docker Compose (Option A) if you'd rather skip WSL2 setup.
 
 Create the database:
 
