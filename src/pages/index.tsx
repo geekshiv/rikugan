@@ -140,11 +140,19 @@ export default function Home(): ReactNode {
           <div className="container">
             <Heading as="h2">Ready to try it?</Heading>
             <p style={{color: 'var(--ifm-color-content-secondary)', marginBottom: '1.5rem'}}>
-              Clone it, run one command, and scan your first repo in minutes.
+              Clone it, run one command, and scan your first repo in minutes. No waitlist, no gated
+              access — Rikugan is self-hosted and free from day one.
             </p>
-            <Link className="button button--primary button--lg" to="/documentation/getting-started/quickstart">
-              Read the Quickstart
-            </Link>
+            <div style={{display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap'}}>
+              <Link className="button button--primary button--lg" to="/documentation/getting-started/quickstart">
+                Read the Quickstart
+              </Link>
+              <Link
+                className="button button--outline button--lg"
+                to="https://github.com/geekshiv/rikugan/discussions/1">
+                Get notified about releases
+              </Link>
+            </div>
           </div>
         </section>
       </main>
