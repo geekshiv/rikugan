@@ -31,3 +31,9 @@ Each user has their own saved layout (`DashboardLayout` — ordered widget list)
 5. **Week-over-week trend** — reconstructed from the real `FindingStateLog` audit trail, not estimated
 
 Scope to an org, a group, or a single target (`resolve_target_ids_for_scope`) — the standalone endpoint and the `security_score` dashboard widget always agree for the same scope, since they share this resolver.
+
+:::info Each component is a 0–100 sub-score, not a raw count
+The five component rows (e.g. "Open findings score") show a normalized score, not the number of findings. A component can read `0/100` — the worst possible score — even when hundreds of findings feed into it, if their severity load exceeds the scoring threshold. Each row shows the real underlying metric in parentheses (e.g. `1382 open on default branch`) so the score and the count are never confused for each other.
+
+The **Open findings** component is also scoped to each target's **default branch only** — a different scope than the KPI Cards' "Open Findings" count, which spans every branch. On a target with most findings on feature branches, these two numbers can legitimately differ.
+:::
