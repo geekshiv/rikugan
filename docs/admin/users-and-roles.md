@@ -22,4 +22,4 @@ Assign roles: **Admin → Workspace Roles** tab, or `/api/admin/workspace-roles`
 
 Login is pbkdf2-hashed password + HMAC-signed session cookie — no external auth service (`app/core/security.py`). Route protection on the frontend lives in `src/proxy.ts`.
 
-The seeded admin account (`ADMIN_EMAIL`/`ADMIN_PASSWORD` in backend `.env`, default `admin@rikugan.io` / `changeme123`) is created on first backend startup — **change the password before any non-local use.**
+The seeded admin account (`ADMIN_EMAIL`/`ADMIN_PASSWORD` in backend `.env`, default `admin@rikugan.local` / `changeme123`) is created on first backend startup — **change the password before any non-local use.**

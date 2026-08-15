@@ -32,7 +32,7 @@ Once it's up:
 | Backend API | http://localhost:8000 (`/docs` for OpenAPI UI, `/health` for liveness) |
 | Scanner sanity check | `curl http://localhost:8000/api/tools/health` |
 
-Sign in with the seeded admin account: `ADMIN_EMAIL`/`ADMIN_PASSWORD` from `.env` (defaults to `admin@rikugan.io` / `changeme123` — **change this before any non-local use**).
+Sign in with the seeded admin account: `ADMIN_EMAIL`/`ADMIN_PASSWORD` from `.env` (defaults to `admin@rikugan.local` / `changeme123` — **change this before any non-local use**).
 
 To stop: `docker compose down` (add `-v` to also drop the Postgres volume).
 
