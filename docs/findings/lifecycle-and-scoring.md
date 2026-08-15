@@ -8,7 +8,9 @@ sidebar_position: 1
 
 A `Finding` moves through a triage state machine — states include (at minimum) **Open**, **Mitigated**, **Accepted Risk**, **False Positive**, **Won't Fix**, and **Reopened**. `Reopened` still counts as "open" for SLA-violation purposes. Every state change is recorded in `FindingStateLog`, a real audit trail (used e.g. by the Security Score's week-over-week trend).
 
-Bulk triage is available on the Findings page (checkbox selection + bulk-action bar, reused by the Activity Feed's bulk-triage grouping).
+Bulk triage is available on the Findings page via checkbox selection + a bulk-action bar.
+
+![Findings page: filterable list with risk score, severity, and state](/img/screenshots/findings.png)
 
 ## Deduplication
 

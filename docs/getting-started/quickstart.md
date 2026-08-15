@@ -104,8 +104,14 @@ npm run dev
 
 Open http://localhost:3000 — redirects to `/login`.
 
+![Login screen](/img/screenshots/login.png)
+
 ## First steps after signing in
 
 1. Bootstrap or confirm your workspace (Settings → Workspaces).
 2. Connect GitHub — see [Connecting GitHub](../github-integration/connecting-github.md).
 3. Add a target repo and run your first scan — see [Scanners](../scanning/scanners.md).
+
+Once you're in, the dashboard is your home base:
+
+![Security Overview dashboard](/img/screenshots/dashboard.png)

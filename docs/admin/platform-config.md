@@ -10,6 +10,8 @@ sidebar_position: 3
 - **Slack** — incoming webhook URL for notifications
 - **Jira** — base URL, API token, project key, issue type, and an auto-create severity threshold
 
+![Admin: Global Integrations tab](/img/screenshots/admin-integrations.png)
+
 ## Secrets at rest
 
 Secret fields (GitHub App secrets, the OpenAI-compatible provider key, Slack webhook URL, Jira API token) are encrypted with Fernet (`encrypt_secret()`/`decrypt_secret()` in `core/crypto.py`, key from `PLATFORM_ENCRYPTION_KEY`) and never echoed back in plaintext — the API returns a `*_set: boolean` instead of the value once configured.

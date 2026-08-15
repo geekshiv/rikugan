@@ -6,7 +6,9 @@ sidebar_position: 2
 
 ## Discovery (static)
 
-`POST /api/discovery` extracts API routes from a target's source via regex-based analysis (`backend/app/scanners/discovery.py`) — no live traffic involved. Results persist per-target and roll up into an org-wide aggregate view.
+`POST /api/discovery` extracts API routes from a target's source via regex-based analysis (`backend/app/scanners/discovery.py`) — no live traffic involved. Results persist per-target and roll up into an org-wide aggregate view, shown on the **API Discovery** page:
+
+![API Discovery page](/img/screenshots/api-discovery.png)
 
 ## Active scanning (dynamic)
 

@@ -8,7 +8,9 @@ PR Guardrail scans a pull request's diff for **net-new** findings only, and can 
 
 ## Running a scan
 
-`POST /api/pr-guardrail/scan` runs a diff scan against a PR. Findings land in `PRGuardrailFinding` — a table kept separate from the main `Finding` table so PR-branch noise never pollutes your default-branch security posture. `GET /api/pr-guardrail/log` lists past scans; `GET /api/pr-guardrail/{pr_scan_id}/findings` lists one scan's findings.
+`POST /api/pr-guardrail/scan` runs a diff scan against a PR. Findings land in `PRGuardrailFinding` — a table kept separate from the main `Finding` table so PR-branch noise never pollutes your default-branch security posture. `GET /api/pr-guardrail/log` lists past scans; `GET /api/pr-guardrail/{pr_scan_id}/findings` lists one scan's findings. In the UI, this is the **PR History** page:
+
+![PR History page](/img/screenshots/pr-history.png)
 
 ## Enforcement modes
 
@@ -23,7 +25,9 @@ Every target, group, and workspace has an `enforcement_mode`: `block`, `alert`, 
 - **alert**: the PR comment still posts, but the commit status reports `success` with a note that it's non-blocking (GitHub commit statuses have no "neutral" state)
 - **disabled**: PR Guardrail doesn't run at all — checked before any clone/scan/comment/status
 
-This is a distinct concept from **Policy** (below): policy decides *which* findings are severe enough to count as blocking; enforcement mode decides whether a PR carrying blocking findings actually fails the build.
+This is a distinct concept from **Policy** (below): policy decides *which* findings are severe enough to count as blocking; enforcement mode decides whether a PR carrying blocking findings actually fails the build. The dropdown lives right on a target's detail page:
+
+![Target detail: PR Guardrail enforcement dropdown](/img/screenshots/target-detail.png)
 
 ## Accept risk / ignore workflow
 

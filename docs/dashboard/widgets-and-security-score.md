@@ -18,6 +18,8 @@ The dashboard is built from a small, concrete widget catalog (`app.core.widgets.
 
 Each user has their own saved layout (`DashboardLayout` — ordered widget list). Edit mode lets you add/remove/reorder widgets (move-up-down buttons, not drag-and-drop). `GET /api/dashboard/widget-data` batches every widget's data in one round-trip; one widget's resolver failing shows an error just for that widget, not the whole dashboard.
 
+![Security Overview dashboard](/img/screenshots/dashboard.png)
+
 ## Security Score
 
 `GET /api/dashboard/security-score` computes a 0–100 score + A–F letter grade from five real components:

@@ -20,11 +20,19 @@ Rikugan runs scanners **natively** as subprocesses (not by re-parsing another to
 POST /api/scans/run?target_id=1&tool=semgrep
 ```
 
-Or from the UI: **Scans** page → select target(s) → **Run Scan**. Scans dispatch async via Celery (`app.tasks.celery_app`, queue `scans`) — the request returns immediately with a tracking row; poll status rather than waiting on the request.
+Or from the UI: **On-Demand Scan** page → select target(s) → **Scan**. Scans dispatch async via Celery (`app.tasks.celery_app`, queue `scans`) — the request returns immediately with a tracking row; poll status rather than waiting on the request.
+
+![On-Demand Scan page: multi-select target grid](/img/screenshots/scans.png)
+
+A target's own detail page has one button per tool instead, for a quick one-off run:
+
+![Target detail: per-tool scan buttons](/img/screenshots/target-detail.png)
 
 ## Tool health
 
-`GET /api/tools/health` reports real installed versions for all four core tools, checked live inside the backend container/process — not a static capability list.
+`GET /api/tools/health` reports real installed versions for all four core tools, checked live inside the backend container/process — not a static capability list. Visible at **Admin → Tooling → Tools Health**:
+
+![Admin: Tools Health tab, real installed versions](/img/screenshots/admin-tools-health.png)
 
 ## How results become Findings
 

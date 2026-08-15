@@ -20,9 +20,13 @@ POST /api/targets
 }
 ```
 
-Or use the **Targets** page in the UI, which drives the same endpoint. `criticality_weight` feeds priority scoring (see [Findings Lifecycle & Scoring](../findings/lifecycle-and-scoring.md)).
+Or use the **Repo Sync** page in the UI, which drives the same endpoint. `criticality_weight` feeds priority scoring (see [Findings Lifecycle & Scoring](../findings/lifecycle-and-scoring.md)).
 
-`PATCH /api/targets/{id}` updates a target — including `api_base_url`, which is the *only* source of a host for [Active API Scanning](../scanning/api-discovery-and-scanning.md); a nuclei scan can never be pointed at an arbitrary third-party URL.
+![Repo Sync: target list](/img/screenshots/targets-list.png)
+
+`PATCH /api/targets/{id}` updates a target — including `api_base_url`, which is the *only* source of a host for [Active API Scanning](../scanning/api-discovery-and-scanning.md); a nuclei scan can never be pointed at an arbitrary third-party URL. All of this lives on a target's detail page:
+
+![Target detail page](/img/screenshots/target-detail.png)
 
 ## Groups & tags
 
@@ -34,4 +38,6 @@ Wherever you see a repo dropdown (SBOM, Reports, Dashboard scoping), Rikugan use
 
 ## Workspace API key
 
-Each target's workspace has an API key (`GET /api/targets/{id}/workspace-key`, regenerate via `POST .../workspace-key/regenerate`) used to authenticate CI/CD pushes to the [ingest endpoint](./pipeline-integration.md) — this is separate from your session login and from the GitHub App token.
+Each target's workspace has an API key (`GET /api/targets/{id}/workspace-key`, regenerate via `POST .../workspace-key/regenerate`) used to authenticate CI/CD pushes to the [ingest endpoint](./pipeline-integration.md) — this is separate from your session login and from the GitHub App token. Manage it from **Settings → Workspace**:
+
+![Settings: masked workspace API key with reveal/copy/rotate](/img/screenshots/settings-workspace.png)

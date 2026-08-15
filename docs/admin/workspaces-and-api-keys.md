@@ -23,6 +23,8 @@ Each workspace has an API key used to authenticate:
 - CI/CD SARIF pushes to `/api/ingest/{target_id}`
 - Generated pipeline-integration workflows (`RIKUGAN_API_KEY` secret)
 
-Manage/rotate a target's key: `GET /api/targets/{id}/workspace-key`, `POST .../workspace-key/regenerate`. Keys are never echoed back in plaintext after creation except at generation time — the UI shows a masked value with a rotate action, not the raw key on every load.
+Manage/rotate a target's key: `GET /api/targets/{id}/workspace-key`, `POST .../workspace-key/regenerate`. Keys are never echoed back in plaintext after creation except at generation time — the UI shows a masked value with a rotate action, not the raw key on every load, at **Settings → Workspace**:
+
+![Settings: masked workspace API key](/img/screenshots/settings-workspace.png)
 
 This key is separate from your session cookie and from the GitHub App's installation token — three distinct trust boundaries, each scoped to what it needs.

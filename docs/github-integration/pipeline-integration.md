@@ -17,6 +17,10 @@ The generated workflow requires two repo secrets, pointing at a **publicly reach
 
 Results are pushed via `POST /api/ingest/{target_id}` (SARIF), authenticated by that key rather than a session cookie.
 
+A target's detail page shows the integration card and whether it's already integrated:
+
+![Target detail: CI/CD Pipeline Integration card](/img/screenshots/target-detail.png)
+
 ## Bulk integration
 
 Select multiple targets in the Targets page (or `POST /api/targets/bulk-pipeline-integrate` with a list of `target_ids`) to roll pipeline integration out across many repos at once. This:

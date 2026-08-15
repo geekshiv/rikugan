@@ -18,8 +18,12 @@ There's deliberately no per-target SLA override — only workspace/group.
 
 `GET /api/findings` and `/{id}` embed `sla_days`/`sla_violated` on every finding. A finding is only "in violation" while it's still open (states other than Mitigated/Accepted Risk/False Positive/Won't Fix — Reopened still counts as open). `GET /api/dashboard/sla-compliance` aggregates workspace-wide.
 
-Manage rules: **Admin → SLA Rules** tab, or `/api/sla-rules` (SECURITY_ENGINEER-or-admin for writes).
+Manage rules: **Admin → Scan Config → SLA Rules**, or `/api/sla-rules` (SECURITY_ENGINEER-or-admin for writes).
+
+![Admin: SLA Rules tab](/img/screenshots/admin-sla-rules.png)
 
 ## Policy-as-code
 
-`/api/policies` (admin) defines which finding severities/types count as **blocking** for PR Guardrail. This is a distinct axis from [enforcement mode](../github-integration/pr-guardrail.md#enforcement-modes): policy decides *what's* blocking; enforcement mode decides whether a PR carrying blocking findings actually fails the build.
+`/api/policies` (admin) defines which finding severities/types count as **blocking** for PR Guardrail — managed at **Admin → Scan Config → Policies**. This is a distinct axis from [enforcement mode](../github-integration/pr-guardrail.md#enforcement-modes): policy decides *what's* blocking; enforcement mode decides whether a PR carrying blocking findings actually fails the build.
+
+![Admin: Policies tab](/img/screenshots/admin-policies.png)

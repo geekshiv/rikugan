@@ -6,16 +6,22 @@ sidebar_position: 1
 
 Rikugan connects to GitHub via a **GitHub App** (not a PAT) for org-wide activity, PR Guardrail commit statuses, and pipeline-integration PRs.
 
+Once connected, the **Repo Sync** page shows the live connection status at the top:
+
+![Repo Sync: GitHub App connected, repos synced](/img/screenshots/targets-list.png)
+
 ## Create the App (manifest flow)
 
-1. In Rikugan, go to **Settings → GitHub** and click **Connect GitHub**.
+1. In Rikugan, go to **Admin → Tooling → Global Integrations** and click **Connect GitHub**.
 2. This calls `GET /api/github-app/manifest-data`, which builds a GitHub App manifest (name, webhook URL, required permissions — including `workflows: write`, needed for pipeline-integration PRs that add `.github/workflows/` files).
 3. You're redirected to GitHub's manifest-flow page, where you approve and create the App against your org or personal account.
 4. GitHub redirects back with a temporary code; Rikugan exchanges it for the App's credentials automatically.
 
+![Admin: Global Integrations, GitHub App connection card](/img/screenshots/admin-integrations.png)
+
 ## Multiple Apps / installations
 
-Rikugan supports more than one `GitHubAppConfig` (e.g. separate Apps per GitHub org), each with its own set of `GitHubInstallation` rows. `GET /api/github-app/status` reports connection state per App/installation. The **Connect GitHub** card in Settings renders one section per configured App.
+Rikugan supports more than one `GitHubAppConfig` (e.g. separate Apps per GitHub org), each with its own set of `GitHubInstallation` rows. `GET /api/github-app/status` reports connection state per App/installation. The **Global Integrations** card renders one section per configured App — see "Register another GitHub App" in the screenshot above.
 
 ## Re-approving permissions
 
