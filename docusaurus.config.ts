@@ -14,10 +14,10 @@ const config: Config = {
   },
 
   url: 'https://geekshiv.github.io',
-  baseUrl: '/rikugan-docs/',
+  baseUrl: '/rikugan/',
 
   organizationName: 'geekshiv',
-  projectName: 'rikugan-docs',
+  projectName: 'rikugan',
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
 
@@ -34,8 +34,8 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          routeBasePath: '/',
-          editUrl: 'https://github.com/geekshiv/rikugan-docs/tree/main/',
+          routeBasePath: 'documentation',
+          editUrl: 'https://github.com/geekshiv/rikugan/tree/main/',
         },
         blog: false,
         theme: {
@@ -62,10 +62,10 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'docsSidebar',
           position: 'left',
-          label: 'Docs',
+          label: 'Documentation',
         },
         {
-          href: 'https://github.com/geekshiv/rikugan',
+          href: 'https://github.com/geekshiv/rikugan-platform',
           label: 'GitHub',
           position: 'right',
         },
@@ -77,22 +77,22 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
-            {label: 'Getting Started', to: '/getting-started/quickstart'},
-            {label: 'GitHub Integration', to: '/github-integration/connecting-github'},
-            {label: 'Scanning', to: '/scanning/scanners'},
+            {label: 'Getting Started', to: '/documentation/getting-started/quickstart'},
+            {label: 'GitHub Integration', to: '/documentation/github-integration/connecting-github'},
+            {label: 'Scanning', to: '/documentation/scanning/scanners'},
           ],
         },
         {
           title: 'Community',
           items: [
-            {label: 'GitHub Issues', href: 'https://github.com/geekshiv/rikugan/issues'},
-            {label: 'Discussions', href: 'https://github.com/geekshiv/rikugan/discussions'},
+            {label: 'GitHub Issues', href: 'https://github.com/geekshiv/rikugan-platform/issues'},
+            {label: 'Discussions', href: 'https://github.com/geekshiv/rikugan-platform/discussions'},
           ],
         },
         {
           title: 'More',
           items: [
-            {label: 'GitHub Repo', href: 'https://github.com/geekshiv/rikugan'},
+            {label: 'GitHub Repo', href: 'https://github.com/geekshiv/rikugan-platform'},
           ],
         },
       ],

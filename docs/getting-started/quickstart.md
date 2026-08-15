@@ -11,7 +11,7 @@ Rikugan is 100% free and open-source — no paid tiers, no feature gating. This 
 Requires only [Docker](https://docs.docker.com/get-docker/) with Compose v2.
 
 ```bash
-git clone https://github.com/geekshiv/rikugan.git
+git clone https://github.com/geekshiv/rikugan-platform.git
 cd rikugan
 cp .env.example .env   # every var has a working local-dev default
 docker compose up --build
