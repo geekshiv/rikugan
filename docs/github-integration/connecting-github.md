@@ -6,9 +6,9 @@ sidebar_position: 1
 
 Rikugan connects to GitHub via a **GitHub App** (not a PAT) for org-wide activity, PR Guardrail commit statuses, and pipeline-integration PRs.
 
-Once connected, the **Repo Sync** page shows the live connection status at the top:
+Once connected, the **Targets** page shows the live connection status at the top:
 
-![Repo Sync: GitHub App connected, repos synced](/img/screenshots/targets-list.png)
+![Targets: GitHub App connected, repos synced](/img/screenshots/targets-list.png)
 
 ## Create the App (manifest flow)
 

@@ -106,6 +106,19 @@ Open http://localhost:3000 — redirects to `/login`.
 
 ![Login screen](/img/screenshots/login.png)
 
+## First-run setup
+
+The first time an admin signs in to a new deployment, Rikugan asks a few questions about your stack — languages, whether you manage infrastructure as code, whether you build AI/ML features, your pull-request policy.
+
+Rikugan ships with **every scanner enabled**. The answers let it switch off the ones that cannot apply to you, so your findings are signal rather than noise — gosec has nothing to say about a repository with no Go.
+
+Two things worth knowing:
+
+- **Every question is optional**, and skipping keeps all scanners on.
+- **Nothing is switched off silently.** Before saving, you see exactly which scanners the answers turn off and why, and each stays listed in **Admin → Tool Marketplace** where it can be turned back on in one click.
+
+An unanswered question always leaves a scanner enabled: *not stated* is not *no*, and the safe default for a security scanner is to run.
+
 ## First steps after signing in
 
 1. Bootstrap or confirm your workspace (Settings → Workspaces).

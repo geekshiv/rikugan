@@ -13,6 +13,11 @@ Rikugan runs scanners **natively** as subprocesses (not by re-parsing another to
 | **Gitleaks** | Secrets | Committed credentials/API keys |
 | **gosec** | SAST (Go) | Go-specific security issues, auto-detected from `Finding.tool` history or GitHub's `/languages` API |
 | **nuclei** | DAST | Active scanning of already-discovered API endpoints |
+| **Checkov / tfsec** | IaC | Terraform, Kubernetes, CloudFormation misconfiguration |
+| **ModelScan** | AI/ML | Unsafe deserialization in serialized model files |
+| **semgrep-llm** | AI/ML | Rikugan's OWASP LLM Top 10 ruleset, shipped in-repo |
+
+The two AI/ML scanners only run against repositories detected as AI/ML — see [AI/ML repository security](./ai-security.md).
 
 ## Triggering a scan
 

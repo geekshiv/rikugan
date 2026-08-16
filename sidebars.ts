@@ -28,6 +28,8 @@ const sidebars: SidebarsConfig = {
         'scanning/scanners',
         'scanning/api-discovery-and-scanning',
         'scanning/sbom',
+        'scanning/ai-security',
+        'scanning/aibom',
       ],
     },
     {

@@ -20,13 +20,29 @@ POST /api/targets
 }
 ```
 
-Or use the **Repo Sync** page in the UI, which drives the same endpoint. `criticality_weight` feeds priority scoring (see [Findings Lifecycle & Scoring](../findings/lifecycle-and-scoring.md)).
+Or use the **Targets** page in the UI, which drives the same endpoint. `criticality_weight` feeds priority scoring (see [Findings Lifecycle & Scoring](../findings/lifecycle-and-scoring.md)) and is shown per row as *Risk N/5*.
 
-![Repo Sync: target list](/img/screenshots/targets-list.png)
+![Targets: repository inventory](/img/screenshots/targets-list.png)
 
-`PATCH /api/targets/{id}` updates a target — including `api_base_url`, which is the *only* source of a host for [Active API Scanning](../scanning/api-discovery-and-scanning.md); a nuclei scan can never be pointed at an arbitrary third-party URL. All of this lives on a target's detail page:
+Each row leads with the number that matters: open findings on the default branch, with critical (`C`) and high (`H`) counts beside it. A repository that has never been scanned shows **not scanned** rather than a zero — nobody looked, which is not the same as clean.
+
+The list sorts by **most findings** by default, since that is the question the page exists to answer. Other orders are most-severe, least-recently-scanned (never-scanned first) and name. Rows per page is adjustable (25/50/100).
+
+`PATCH /api/targets/{id}` updates a target — including `api_base_url`, which is the *only* source of a host for [Active API Scanning](../scanning/api-discovery-and-scanning.md); a nuclei scan can never be pointed at an arbitrary third-party URL.
+
+## The target detail page
+
+A target has three sub-pages, each with its own URL so it can be linked from a finding, a PR comment or a Slack alert:
+
+| Tab | Contents |
+|---|---|
+| **Overview** | Open findings by severity, last scan and which tools ran, default branch, risk weight, AI/ML detection status |
+| **Vulnerabilities** | This target's findings, with the same triage, filtering and bulk actions as the main Findings page |
+| **Settings** | Groups, PR Guardrail enforcement, Active API Scanning, CI pipeline integration |
 
 ![Target detail page](/img/screenshots/target-detail.png)
+
+Link directly to a tab with `?tab=overview`, `?tab=vulnerabilities` or `?tab=settings`.
 
 ## Groups & tags
 
