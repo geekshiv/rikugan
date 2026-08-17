@@ -59,7 +59,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Reference',
-      items: ['reference/api', 'reference/mcp-server'],
+      items: ['reference/api', 'reference/public-api', 'reference/mcp-server'],
     },
   ],
 };
